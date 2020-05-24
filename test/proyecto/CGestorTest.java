@@ -23,6 +23,10 @@ import java.util.*;
 public class CGestorTest {
     static ArrayList<CTarjeta> alTar= new ArrayList<>();
     static ArrayList<CCuenta> alCuen= new ArrayList<>();
+
+    /**
+     *
+     */
     @Test
     public void testMvCrearTarjeta() {
         CCuenta c1 =new CCuenta(100,2000.0,"20/10/1999",alTar);
@@ -43,16 +47,20 @@ public class CGestorTest {
        assertTrue(pepe.getAlCuentas().get(0).getSaldo()==2000.0);
     }
 
-
+    /**
+     *
+     */
     @Test
     public void testMvCrearPerfil() {
         CGestor g1=new CGestor();
         g1.mvCrearPerfil("Pepe","Hernandez","Calle las rosas","56493549G",20,965846134);
          CCliente pepe = new CCliente("Pepe","Hernandez","Calle las rosas","56493549G",20,965846134,alCuen);
-        assertEquals(pepe, g1.mvCrearPerfil("Pepe","Hernandez","Calle las rosas","56493549G",20,965846134));
+        assertEquals(pepe.toString(),"Para el cliente: " + "nombre=" + "Pepe" + ", aplellido=" + "Hernandez" + ", dir=" + "Calle las rosas" + ", nif=" + "56493549G" + ", edad=" + 20 + ", tf=" + 965846134 + ", alCuentas=" + alCuen + '}');
     }
 
-
+    /**
+     *
+     */
     @Test
     public void testMvModificarDatos() {
         CGestor g1=new CGestor();
@@ -66,7 +74,9 @@ public class CGestorTest {
         assertTrue(pepe.getEdad()==25);
     }
 
- 
+    /**
+     *
+     */
     @Test
     public void testMvConsultar() {
        CGestor g1=new CGestor();

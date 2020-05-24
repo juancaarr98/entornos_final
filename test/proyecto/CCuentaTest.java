@@ -19,6 +19,9 @@ import static org.junit.Assert.*;
  */
 public class CCuentaTest {
     
+    /**
+     *
+     */
     @Test
     public void testMdSalarioMedio() {
         

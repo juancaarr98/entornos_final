@@ -21,7 +21,9 @@ public class CClienteTest {
     static ArrayList<CTarjeta> alTar= new ArrayList<>();
     static ArrayList<CCuenta> alCuen= new ArrayList<>();
 
-
+    /**
+     *
+     */
     @Test
     public void testMvInsertar() {
         CTarjeta t1=new CTarjeta(300.0,100.0,259);
@@ -50,6 +52,9 @@ public class CClienteTest {
         assertTrue(pepe.mdSacar(pepe, 0,150.0,0,'r')==0.0);
     }
 
+    /**
+     *
+     */
     @Test
     public void testToString(){
         CCliente pepe = new CCliente("Pepe","Hernandez","Calle las rosas","56493549G",20,965846134,alCuen);
