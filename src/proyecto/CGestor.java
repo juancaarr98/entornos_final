@@ -54,7 +54,7 @@ public class CGestor {
      * @param tlf
      * @return el perfil nuevo que se ha creado
      */
-    public String mvCrearPerfil(String nom,String apell,String d,String dni,int age,int tlf){
+    public String msCrearPerfil(String nom,String apell,String d,String dni,int age,int tlf){
         CCliente p=new CCliente(nom,apell,d,dni,age,tlf);
         System.out.println("Este perfil no tiene cuentas asociadas.");
         return p.toString();
@@ -85,7 +85,7 @@ public class CGestor {
      * @param a
      * @return el perfil del cliente recibido.
      */
-    public String mvConsultar(CCliente a){
+    public String msConsultar(CCliente a){
        return a.toString(); 
     }
 }
