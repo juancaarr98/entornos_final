@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CCliente.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Entornos&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">proyecto</a> &gt; <span class="el_source">CCliente.java</span></div><h1>CCliente.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package proyecto;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Juan carlos
+ */
+public class CCliente {
+    private String nombre;
+    private String aplellido;
+    private String dir;
+    private String nif;
+    private int edad;
+    private int tf;
+    private ArrayList&lt;CCuenta&gt; alCuentas;
+
+<span class="fc" id="L23">    public CCliente(String nombre, String aplellido, String dir, String nif, int edad, int tf) {</span>
+<span class="fc" id="L24">        this.nombre = nombre;</span>
+<span class="fc" id="L25">        this.aplellido = aplellido;</span>
+<span class="fc" id="L26">        this.dir = dir;</span>
+<span class="fc" id="L27">        this.nif = nif;</span>
+<span class="fc" id="L28">        this.edad = edad;</span>
+<span class="fc" id="L29">        this.tf = tf;</span>
+<span class="fc" id="L30">    }</span>
+
+
+<span class="fc" id="L33">    public CCliente(String nombre, String aplellido, String dir, String nif, int edad, int tf, ArrayList&lt;CCuenta&gt; alCuentas) {</span>
+<span class="fc" id="L34">        this.nombre = nombre;</span>
+<span class="fc" id="L35">        this.aplellido = aplellido;</span>
+<span class="fc" id="L36">        this.dir = dir;</span>
+<span class="fc" id="L37">        this.nif = nif;</span>
+<span class="fc" id="L38">        this.edad = edad;</span>
+<span class="fc" id="L39">        this.tf = tf;</span>
+<span class="fc" id="L40">        this.alCuentas = alCuentas;</span>
+<span class="fc" id="L41">    }</span>
+
+
+    public String getNombre() {
+<span class="fc" id="L45">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="fc" id="L49">        this.nombre = nombre;</span>
+<span class="fc" id="L50">    }</span>
+
+    public String getAplellido() {
+<span class="fc" id="L53">        return aplellido;</span>
+    }
+
+    public void setAplellido(String aplellido) {
+<span class="fc" id="L57">        this.aplellido = aplellido;</span>
+<span class="fc" id="L58">    }</span>
+
+    public String getDir() {
+<span class="fc" id="L61">        return dir;</span>
+    }
+
+    public void setDir(String dir) {
+<span class="fc" id="L65">        this.dir = dir;</span>
+<span class="fc" id="L66">    }</span>
+
+    public String getNif() {
+<span class="fc" id="L69">        return nif;</span>
+    }
+
+    public void setNif(String nif) {
+<span class="fc" id="L73">        this.nif = nif;</span>
+<span class="fc" id="L74">    }</span>
+
+    public int getEdad() {
+<span class="fc" id="L77">        return edad;</span>
+    }
+
+    public void setEdad(int edad) {
+<span class="fc" id="L81">        this.edad = edad;</span>
+<span class="fc" id="L82">    }</span>
+
+    public int getTf() {
+<span class="fc" id="L85">        return tf;</span>
+    }
+
+    public void setTf(int tf) {
+<span class="fc" id="L89">        this.tf = tf;</span>
+<span class="fc" id="L90">    }</span>
+
+    public ArrayList&lt;CCuenta&gt; getAlCuentas() {
+<span class="fc" id="L93">        return alCuentas;</span>
+    }
+
+    public void setAlCuentas(ArrayList&lt;CCuenta&gt; alCuentas) {
+<span class="nc" id="L97">        this.alCuentas = alCuentas;</span>
+<span class="nc" id="L98">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L102">        return &quot;Para el cliente: &quot; + &quot;nombre=&quot; + nombre + &quot;, aplellido=&quot; + aplellido + &quot;, dir=&quot; + dir + &quot;, nif=&quot; + nif + &quot;, edad=&quot; + edad + &quot;, tf=&quot; + tf + &quot;, alCuentas=&quot; + alCuentas + '}';</span>
+    }
+    
+    public double mvInsertar(CCliente c, int nro_cuent,double cantidad){
+<span class="fc" id="L106">        double saldo_final=c.getAlCuentas().get(nro_cuent).getSaldo() +cantidad;</span>
+<span class="fc" id="L107">        c.getAlCuentas().get(nro_cuent).setSaldo(saldo_final); </span>
+<span class="fc" id="L108">        return saldo_final;</span>
+    }
+    public double  mdSacar(CCliente c, int nro_cuent,double cantidad, int nro_tarjeta,char x){
+<span class="fc" id="L111">        double saldo_cuenta=c.getAlCuentas().get(nro_cuent).getSaldo();</span>
+<span class="fc" id="L112">        double lim_cuenta=c.getAlCuentas().get(nro_cuent).getLim_cuenta();</span>
+<span class="fc" id="L113">        double lim_cajero=c.getAlCuentas().get(nro_cuent).getAlTarjetas().get(nro_tarjeta).getLimit_caja();</span>
+<span class="fc" id="L114">        double lim_online=c.getAlCuentas().get(nro_cuent).getAlTarjetas().get(nro_tarjeta).getLimit_onLine();</span>
+<span class="fc" id="L115">        double resultado=0.0;</span>
+<span class="fc bfc" id="L116" title="All 3 branches covered.">        switch(x){</span>
+            case 'c':
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">                if((cantidad&lt;lim_cajero)){</span>
+<span class="fc" id="L119">                    resultado=saldo_cuenta-cantidad;</span>
+<span class="fc bfc" id="L120" title="All 2 branches covered.">                    if(resultado&gt;lim_cuenta)</span>
+<span class="fc" id="L121">                        return resultado;</span>
+                    else 
+<span class="fc" id="L123">                        return 0.0;</span>
+                }
+                break;
+            case 'o':
+<span class="pc bpc" id="L127" title="1 of 2 branches missed.">                if((cantidad&lt;lim_online)){</span>
+<span class="fc" id="L128">                    resultado=saldo_cuenta-cantidad;</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">                    if(resultado&gt;lim_cuenta)</span>
+<span class="fc" id="L130">                        return resultado;</span>
+                    else 
+<span class="fc" id="L132">                        return 0.0;</span>
+                }
+                break;           
+        }//end switch
+<span class="fc" id="L136">        return resultado;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
