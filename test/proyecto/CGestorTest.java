@@ -51,9 +51,9 @@ public class CGestorTest {
      *
      */
     @Test
-    public void testMvCrearPerfil() {
+    public void testMsCrearPerfil() {
         CGestor g1=new CGestor();
-        g1.mvCrearPerfil("Pepe","Hernandez","Calle las rosas","56493549G",20,965846134);
+        g1.msCrearPerfil("Pepe","Hernandez","Calle las rosas","56493549G",20,965846134);
          CCliente pepe = new CCliente("Pepe","Hernandez","Calle las rosas","56493549G",20,965846134,alCuen);
         assertEquals(pepe.toString(),"Para el cliente: " + "nombre=" + "Pepe" + ", aplellido=" + "Hernandez" + ", dir=" + "Calle las rosas" + ", nif=" + "56493549G" + ", edad=" + 20 + ", tf=" + 965846134 + ", alCuentas=" + alCuen + '}');
     }
@@ -78,10 +78,10 @@ public class CGestorTest {
      *
      */
     @Test
-    public void testMvConsultar() {
+    public void testMsConsultar() {
        CGestor g1=new CGestor();
        CCliente pepe = new CCliente("Pepe","Hernandez","Calle las rosas","56493549G",20,965846134,alCuen);
-       assertEquals(pepe.toString(),g1.mvConsultar(pepe));
+       assertEquals(pepe.toString(),g1.msConsultar(pepe));
     }
     
 }
